@@ -1,0 +1,17 @@
+.dark {
+  background-color: #121212;
+  color: white;
+  min-height: 100vh;
+}
+
+.dark .card {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+.dark input,
+.dark select {
+  background-color: #2a2a2a;
+  color: white;
+  border: 1px solid #444;
+}

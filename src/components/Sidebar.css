@@ -1,0 +1,29 @@
+.sidebar {
+  width: 220px;
+  background: #1e293b;
+  color: white;
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #cbd5e1;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: white;
+  transform: translateX(5px);
+}
+
+.sidebar a.active {
+  background: #334155;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: white;
+}
+
