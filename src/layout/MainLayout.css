@@ -20,6 +20,10 @@
     padding: 15px;
   }
 
+  .main-container {
+    flex-direction: column;
+  }
+  
   .cards {
     flex-direction: column;
   }

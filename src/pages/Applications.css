@@ -1,44 +1,74 @@
+/* ===== GLOBAL ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== APP CONTAINER ===== */
 .app-container {
-  padding: 30px;
+  padding: 20px;
 }
 
 .app-title {
   margin-bottom: 20px;
+  text-align: center;
 }
 
+/* ===== FORM ===== */
 .form-container {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   margin-bottom: 25px;
   flex-wrap: wrap;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form-container input,
 .form-container select {
-  padding: 8px;
-  flex: 1 1 150px;
-  min-width: 120px;
+  padding: 10px;
+  flex: 1 1 45%;
+  min-width: 140px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
 }
 
 .form-container button {
-  padding: 8px 14px;
+  padding: 10px;
+  flex: 1 1 100%;
   cursor: pointer;
-  flex: 1 1 150px;
-  min-width: 120px;
+  border: none;
+  border-radius: 6px;
+  background: #22c55e;
+  color: white;
+  font-size: 14px;
+  transition: 0.3s;
 }
 
+.form-container button:hover {
+  background: #15803d;
+}
+
+/* ===== CARDS ===== */
 .cards {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
+  justify-content: center;
 }
 
 .card {
   background: #f4f4f4;
   padding: 15px;
   flex: 1 1 250px;
-  max-width: 100%;;
-  border-radius: 8px;
+  max-width: 300px;
+  border-radius: 10px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }
 
@@ -46,8 +76,9 @@
   margin-bottom: 5px;
 }
 
+/* ===== STATUS ===== */
 .status {
-  font-size: 14px;
+  font-size: 13px;
   padding: 4px 8px;
   border-radius: 5px;
   display: inline-block;
@@ -74,12 +105,13 @@
   color: #155724;
 }
 
+/* ===== BUTTONS ===== */
 .delete-btn {
   margin-top: 10px;
   background: crimson;
   color: white;
   border: none;
-  padding: 5px 8px;
+  padding: 6px 10px;
   cursor: pointer;
   border-radius: 4px;
 }
@@ -89,34 +121,62 @@
   transform: scale(1.05);
 }
 
-.add-btn{
+.add-btn {
   margin-top: 10px;
-  background: rgb(20, 220, 50);
+  background: #22c55e;
   color: white;
   border: none;
-  padding: 5px 8px;
+  padding: 6px 10px;
   cursor: pointer;
   border-radius: 4px;
   transition: 0.3s;
 }
 
 .add-btn:hover {
-  background-color: #0a6315;
+  background-color: #15803d;
   transform: scale(1.05);
 }
 
-.edit-btn{
-  
-  background: rgb(14, 79, 164);
+.edit-btn {
+  background: #2563eb;
   color: white;
   border: none;
-  padding: 5px 8px;
+  padding: 6px 10px;
   cursor: pointer;
   border-radius: 4px;
   transition: 0.3s;
 }
 
 .edit-btn:hover {
-  background-color: #071b74cd;
+  background-color: #1e40af;
   transform: scale(1.05);
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+  .app-container {
+    padding: 15px;
+  }
+
+  .form-container {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .form-container input,
+  .form-container select,
+  .form-container button {
+    width: 100%;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 100%;
+  }
 }

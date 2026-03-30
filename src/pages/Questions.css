@@ -1,21 +1,69 @@
-.tech-navbar{
-display:flex;
-background:#282A35;
-color:white;
-padding:10px;
-gap:20px;
-overflow-x:auto;
+/* ===== GLOBAL ===== */
+* {
+  box-sizing: border-box;
 }
 
-.tech-navbar span{
-cursor:pointer;
-font-weight:bold;
+/* ===== NAVBAR ===== */
+.tech-navbar {
+  display: flex;
+  background: #282A35;
+  color: white;
+  padding: 12px;
+  gap: 20px;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none; /* Firefox */
 }
 
-.tech-navbar span:hover{
-color:#04AA6D;
+.tech-navbar::-webkit-scrollbar {
+  display: none; /* Chrome */
 }
 
-.questions{
-padding:20px;
+.tech-navbar span {
+  cursor: pointer;
+  font-weight: bold;
+  flex-shrink: 0;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.tech-navbar span:hover {
+  color: #04AA6D;
+}
+
+/* ===== QUESTIONS SECTION ===== */
+.questions {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Example question card (if you have one) */
+.question-card {
+  background: #f4f4f4;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+  .tech-navbar {
+    gap: 12px;
+    padding: 10px;
+  }
+
+  .tech-navbar span {
+    font-size: 13px;
+  }
+
+  .questions {
+    padding: 15px;
+  }
+
+  .question-card {
+    padding: 12px;
+  }
 }
