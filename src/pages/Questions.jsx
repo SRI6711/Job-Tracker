@@ -1,60 +1,48 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./Questions.css";
 
-const Questions = () => {
-  const questions = [
-    {
-      q: "What is React and why did you use it in this project?",
-      a: "React is a JavaScript library for building UI components. We used it for state management and reusable components."
-    },
-    {
-      q: "Explain useState and useEffect.",
-      a: "useState manages component state, useEffect handles side effects like fetching data or updating localStorage."
-    },
-    {
-      q: "How does localStorage work?",
-      a: "localStorage allows storing key-value data in the browser that persists across page reloads."
-    },
-    {
-      q: "How did you calculate the success rate?",
-      a: "Success rate = (Number of Offers / Total Applications) * 100, rounded to nearest integer."
-    },
-    {
-      q: "How does filtering work in your project?",
-      a: "We filter the applications array based on status and render only matching items."
-    },
-    {
-      q: "What improvements would you add in future?",
-      a: "Adding backend API, authentication, charts, responsive design, and advanced analytics."
-    }
-  ];
+function Questions() {
 
-  const [openIndex, setOpenIndex] = useState(null);
+const [tech, setTech] = useState("html");
 
-  const toggleAnswer = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
-  return (
-    <div className="questions-page">
-      <h2>Interview Questions</h2>
-      <ul className="question-list">
-        {questions.map((item, index) => (
-          <li key={index} className="question-item">
-            <div
-              className="question-title"
-              onClick={() => toggleAnswer(index)}
-            >
-              {item.q}
-            </div>
-            {openIndex === index && (
-              <div className="question-answer">{item.a}</div>
-            )}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+const questions = {
+html: ["What is HTML?", "What are semantic tags?"],
+css: ["What is Flexbox?", "What is CSS Grid?"],
+javascript: ["What is closure?", "What is event bubbling?"],
+react: ["What is React?", "What is useState?"],
+python: ["What is Python?", "What is list comprehension?"],
+django: ["What is Django?", "What is MVT architecture?"],
+mysql: ["What is MySQL?", "What is JOIN?"]
 };
+
+return (
+<div>
+
+{/* NAVBAR */}
+<div className="tech-navbar">
+<span onClick={()=>setTech("html")}>HTML</span>
+<span onClick={()=>setTech("css")}>CSS</span>
+<span onClick={()=>setTech("javascript")}>JAVASCRIPT</span>
+<span onClick={()=>setTech("react")}>REACT</span>
+<span onClick={()=>setTech("python")}>PYTHON</span>
+<span onClick={()=>setTech("django")}>DJANGO</span>
+<span onClick={()=>setTech("mysql")}>MYSQL</span>
+</div>
+
+{/* QUESTIONS */}
+<div className="questions">
+<h2>{tech.toUpperCase()} Questions</h2>
+
+<ul>
+{questions[tech].map((q,index)=>(
+<li key={index}>{q}</li>
+))}
+</ul>
+
+</div>
+
+</div>
+);
+}
 
 export default Questions;
