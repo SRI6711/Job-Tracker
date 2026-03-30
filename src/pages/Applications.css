@@ -16,11 +16,15 @@
 .form-container input,
 .form-container select {
   padding: 8px;
+  flex: 1 1 150px;
+  min-width: 120px;
 }
 
 .form-container button {
   padding: 8px 14px;
   cursor: pointer;
+  flex: 1 1 150px;
+  min-width: 120px;
 }
 
 .cards {
@@ -32,7 +36,8 @@
 .card {
   background: #f4f4f4;
   padding: 15px;
-  width: 250px;
+  flex: 1 1 250px;
+  max-width: 100%;;
   border-radius: 8px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }

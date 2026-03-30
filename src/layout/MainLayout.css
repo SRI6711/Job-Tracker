@@ -14,3 +14,25 @@
   padding: 20px;
   background: #f9fafc;
 }
+@media (max-width: 768px) {
+  
+  .app-container {
+    padding: 15px;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .form-container {
+    flex-direction: column;
+  }
+
+  .tech-navbar {
+    font-size: 14px;
+  }
+}
